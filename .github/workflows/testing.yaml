@@ -13,9 +13,9 @@ on:
           - qa
           - prod
 
-    json_data:
-            description: 'JSON Data to parse'
-            required: true
+      json_data:
+              description: 'JSON Data to parse'
+              required: true
 
 jobs:
   run-databricks-job:
