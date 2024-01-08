@@ -31,7 +31,7 @@ jobs:
       - name: parse json data 
         run: | 
           echo "Raw JSON input: ${{ github.event.inputs.json_data }}"
-          parsed_json=$(echo ${{ github.event.inputs.json_data }} | jq -r '.')
+          parsed_json= ${{ github.event.inputs.json_data }}
           echo "Parsed JSON:"
           echo "$parsed_json"
 
