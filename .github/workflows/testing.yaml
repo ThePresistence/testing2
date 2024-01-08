@@ -8,7 +8,6 @@ on:
         required: true
         description: Select the Environment
         options:
-          - Select Environment
           - expl
           - dev
           - qa
