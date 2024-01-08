@@ -1,0 +1,15 @@
+name: Getting-input-as-a-json-and-run-the-databricks-job
+
+on: 
+  workflow_dispatch: 
+    inputs: 
+      env: 
+        type: choice
+        required: true
+        description: Select the Environment
+        options:
+          - Select Environment
+          - expl
+          - dev
+          - qa
+          - prod
