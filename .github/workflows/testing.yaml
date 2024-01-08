@@ -37,6 +37,6 @@ jobs:
         run: |
           set -exo pipefail 
           name=$(echo $json_data | jq -r '.name')
-          email=$(echo $json_data | jp -r '.email')
+          email=$(echo $json_data | jq -r '.email')
           echo "Value of 'name' property: $name"
           echo "Value of the 'email': $email" 
