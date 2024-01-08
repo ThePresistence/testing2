@@ -30,4 +30,13 @@ jobs:
 
       - name: parse json data 
         run: | 
-          echo ${{ github.event.inputs.json_data }}
+          echo "Raw JSON input: ${{ github.event.inputs.json_data }}"
+          parsed_json=$(echo ${{ github.event.inputs.json_data }} | jq -r '.')
+          echo "Parsed JSON:"
+          echo "$parsed_json"
+
+      - name: Access parsed values (example)
+        run: |
+          # Assuming the JSON has a "name" property
+          name=$(echo $parsed_json | jq -r '.name')
+          echo "Value of 'name' property: $name"
