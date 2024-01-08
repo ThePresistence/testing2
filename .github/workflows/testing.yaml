@@ -33,8 +33,10 @@ jobs:
         uses: actions/checkout@main
 
 
-      - name: Access parsed values (example)
+      - name: Access parsed values
         run: |
           set -exo pipefail 
           name=$(echo $json_data | jq -r '.name')
+          email=$(echo $json_data | jp q -r '.email')
           echo "Value of 'name' property: $name"
+          echo "Value of the 'email': $email" 
