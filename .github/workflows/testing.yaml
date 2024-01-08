@@ -17,6 +17,10 @@ on:
               description: 'JSON Data to parse'
               required: true
 
+
+env: 
+  json_data: ${{ github.event.input.json_data }}
+
 jobs:
   run-databricks-job:
     runs-on: ubuntu-latest
@@ -30,13 +34,14 @@ jobs:
 
       - name: parse json data 
         run: | 
-          echo "Raw JSON input: ${{ github.event.inputs.json_data }}"
-          parsed_json= ${{ github.event.inputs.json_data }}
+          set -exo pipefail 
+          echo "Raw JSON input: $json_data"
+          parsed_json=$json_data
           echo "Parsed JSON:"
           echo "$parsed_json"
 
       - name: Access parsed values (example)
         run: |
-          # Assuming the JSON has a "name" property
+          set -exo pipefail 
           name=$(echo $parsed_json | jq -r '.name')
           echo "Value of 'name' property: $name"
