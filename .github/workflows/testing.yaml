@@ -20,7 +20,7 @@ on:
 
 
 env: 
-  json_data: ${{ github.event.input.json_data }}
+  json_data: ${{ github.event.inputs.json_data }}
 
 jobs:
   run-databricks-job:
