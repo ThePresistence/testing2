@@ -13,3 +13,14 @@ on:
           - dev
           - qa
           - prod
+
+jobs:
+  run-databricks-job:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@main
