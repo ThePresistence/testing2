@@ -32,16 +32,9 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@main
 
-      - name: parse json data 
-        run: | 
-          set -exo pipefail 
-          echo "Raw JSON input: $json_data"
-          parsed_json=$json_data
-          echo "Parsed JSON:"
-          echo "$parsed_json"
 
       - name: Access parsed values (example)
         run: |
           set -exo pipefail 
-          name=$(echo $parsed_json | jq -r '.name')
+          name=$(echo $json_data | jq -r '.name')
           echo "Value of 'name' property: $name"
