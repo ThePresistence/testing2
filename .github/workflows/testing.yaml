@@ -20,7 +20,7 @@ on:
 
 env: 
   json_data: ${{ github.event.input.json_data }}
-  json_data_2: { "name": "John Doe", "email": "johndoe@example.com","age": 30,"city": "New York"}
+  json_data_2: "{ "name": "John Doe", "email": "johndoe@example.com","age": 30,"city": "New York"}"
 
 jobs:
   run-databricks-job:
