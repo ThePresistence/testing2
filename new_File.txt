@@ -1,1 +1,12 @@
 addded the first line 
+
+
+git add . 
+git commit -m "saved locally" 
+
+git push origin <main> 
+
+
+origin= https://github.com/ThePresistence/testing2
+
+
